@@ -1755,7 +1755,7 @@ def __import__():
         #Set and keyframe camera
         cmds.rotate(-Frame.Pov.Angles.X, Frame.Pov.Angles.Y - 90, Frame.Pov.Angles.Z, mainCamera, absolute=True, worldSpace=True)
         cmds.move(Frame.Pov.Origin.X,Frame.Pov.Origin.Z,-Frame.Pov.Origin.Y, mainCamera, absolute=True, worldSpace=True)
-        cmds.camera(cameraShape, e=True) #, hfv = Frame.Pov.FOV
+        cmds.camera(cameraShape, e=True, hfv = Frame.Pov.FOV)
         cmds.setKeyframe(cameraShape, at='focalLength')
         cmds.setKeyframe(mainCamera, at='translateX')
         cmds.setKeyframe(mainCamera, at='translateY')
